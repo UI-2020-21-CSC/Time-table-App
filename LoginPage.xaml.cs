@@ -21,6 +21,12 @@ public partial class LoginPage : ContentPage
             DisplayAlert("Error", "Invalid username or password", "OK");
         }
 
-        // SemanticScreenReader.Announce(CounterBtn.Text);
+            // SemanticScreenReader.Announce(CounterBtn.Text);
+        
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new RegisterPage());
     }
 }
