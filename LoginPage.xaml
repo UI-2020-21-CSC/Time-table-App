@@ -21,6 +21,7 @@
             <Button
                 x:Name="LoginBtn"
                 Text="LOGIN"
+                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnLoginClicked"
                 HorizontalOptions="Center" />
 
