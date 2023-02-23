@@ -49,6 +49,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Platforms\NewFolder\**" />
+	  <Compile Remove="Platforms\NewFolder\**" />
+	  <EmbeddedResource Remove="Platforms\NewFolder\**" />
+	  <MauiCss Remove="Platforms\NewFolder\**" />
+	  <MauiXaml Remove="Platforms\NewFolder\**" />
+	  <None Remove="Platforms\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Remove="NewPage1.xaml.cs" />
 	</ItemGroup>
 
@@ -57,7 +66,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="LoginPage.xaml.cs">
+	  <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+	  <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Login Page\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
@@ -90,10 +104,13 @@
 	  <MauiXaml Update="Lecturer Page\SchedulePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <MauiXaml Update="Login Page\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RegisterPage.xaml">
+	  <MauiXaml Update="Login Page\PasswordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Login Page\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Student Page\EnlistedCourses.xaml">

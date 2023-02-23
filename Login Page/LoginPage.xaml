@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Time_table.LoginPage"
+             BackgroundColor="Purple">
+    <Grid>
+        <!-- Logo -->
+        <StackLayout Margin="20">
+            <Image Source="Logo.png" HorizontalOptions="StartAndExpand" />
+            <StackLayout Margin="0,80">
+                <Label Style="{StaticResource Welcome}" FontSize="32" Text="Welcome" />
+                <Label FontFamily="OpenSansRegular" FontSize="17" Text="Sign in to continue" TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Input fields for email and password -->
+        <StackLayout>
+            <StackLayout>
+                <Label FontFamily="OpenSansRegular" FontSize="16" Text="Username" TextColor="White" />
+
+                <Grid Margin="0,5">
+                    <Frame Opacity="16" BackgroundColor="White" CornerRadius="5" />
+                    <Entry BackgroundColor="Transparent" TextColor="Black" Margin="5,0" Placeholder="Enter Email" PlaceholderColor="Grey"  x:Name="txtEmail" />
+                </Grid>
+
+                <Label FontFamily="OpenSansRegular" FontSize="16" Text="Password" TextColor="White" />
+                <Grid Margin="0,5">
+                    <Frame Opacity="16" BackgroundColor="White" CornerRadius="5" />
+                    <Entry BackgroundColor="Transparent" TextColor="Black" Margin="5,0" Placeholder="Enter Password" PlaceholderColor="Grey" IsPassword="True"  x:Name="txtPassword"/>
+                </Grid>
+
+                <!-- Sign-in button -->
+                <Button Margin="0,5" BackgroundColor="White" Text="Sign in" TextColor="Blue" FontFamily="OpenSansBold" Clicked="Button_Clicked"/>
+
+                <!-- Links to forgot password and register pages -->
+                <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Don't have an account? "/>
+                                <Span Text="Register" TextDecorations="Underline" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Forgot Password? " TextDecorations="Underline" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name ="ForgotTap" Tapped="Forgot_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
