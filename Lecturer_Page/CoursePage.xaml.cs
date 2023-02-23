@@ -1,8 +1,8 @@
-namespace Time_table.Lecturer_Page;
+namespace Lecturer;
 
-public partial class CoursePage : ContentPage
+public partial class coursepage : ContentPage
 {
-	public CoursePage()
+	public coursepage()
 	{
 		InitializeComponent();
 	}

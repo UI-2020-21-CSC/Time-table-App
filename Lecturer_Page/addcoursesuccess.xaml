@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.addcoursesuccess">
+
+    <ScrollView BackgroundColor="White">
+        <VerticalStackLayout >
+            <Frame BackgroundColor="Transparent"
+                   HeightRequest="338"
+                   WidthRequest="391"
+                   Margin="0,50,0,0">
+                <Grid>
+                    <Image Source="greendone.png"
+                       HeightRequest="123.98"
+                       WidthRequest="123.98"
+                       VerticalOptions="Start"
+                       Margin="0,60,0,0"/>
+                    <Grid Margin="0,180,0,0">
+                        <Label Text="Course details added successfully"
+                       TextColor="#8F9BB3"
+                        FontFamily="Montserrat_Regular"
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                       />
+                    </Grid>
+                </Grid>
+
+
+
+            </Frame>
+
+
+
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
