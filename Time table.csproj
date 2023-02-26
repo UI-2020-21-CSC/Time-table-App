@@ -66,10 +66,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
 	  <PackageReference Include="FirebaseAdmin" Version="2.3.0" />
 	  <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
 	  <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	  <PackageReference Include="Syncfusion.Maui.Calendar" Version="20.4.51" />
+	  <PackageReference Include="Syncfusion.Maui.Core" Version="20.4.51" />
 	</ItemGroup>
 
 	<ItemGroup>
