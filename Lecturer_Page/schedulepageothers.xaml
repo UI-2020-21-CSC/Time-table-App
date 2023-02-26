@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lecturer.schedulepageothers">
 
@@ -20,7 +21,9 @@
 
                 <Grid>
                     <Grid  Margin="0,0,-320,0">
-                        <Button BackgroundColor="Transparent"
+                        <Button x:Name="BtnClose"
+                                Clicked="Closeothersclicked"
+                            BackgroundColor="Transparent"
                                 HeightRequest="30"
                                 WidthRequest="30"
                                 Margin="0,-5,0,0"
@@ -62,7 +65,9 @@
                                 HorizontalOptions="Center"/>
                         
                     </Grid>
-                    <Button BackgroundColor="#735BF2"
+                    <Button x:Name="BtnSubmitothers"
+                            Clicked="Submitothersclicked"
+                        BackgroundColor="#735BF2"
                             HeightRequest="37"
                             WidthRequest="84"
                             CornerRadius="20"
@@ -95,4 +100,4 @@
         </VerticalStackLayout>
 
     </ScrollView>
-</ContentPage>
+</toolkit:Popup>

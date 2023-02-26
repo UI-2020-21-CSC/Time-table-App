@@ -16,7 +16,8 @@
             </Grid>
             <!--- each course -->
             <Grid>
-                <Button 
+                <Button x:Name="Showme"
+                        Clicked="Showeditdeleteclicked"
                     BackgroundColor="Transparent"
                         HeightRequest="20" 
                         WidthRequest="30"  
@@ -99,7 +100,8 @@
 
             <!---buttons edit and delete-->
 
-            <Grid VerticalOptions="Center" HorizontalOptions="Center" Margin="65, -95, 0, -15" IsVisible="True">
+            <Grid x:Name="editdelete"
+                VerticalOptions="Center" HorizontalOptions="Center" Margin="65, -95, 0, -15" IsVisible="False">
                 <Frame BackgroundColor="White"
                         Margin="0, 0, 15, 0"
                         HorizontalOptions="End"
@@ -110,7 +112,9 @@
                 <Grid>
 
                     <Grid VerticalOptions="Start" Margin="170,10,15,0">
-                        <Button BackgroundColor="Transparent"
+                        <Button x:Name="EDit"
+                                Clicked="Myeditclicked"
+                            BackgroundColor="Transparent"
                         HeightRequest="25" 
                         WidthRequest="168"  
                         HorizontalOptions="End"
@@ -135,7 +139,9 @@
                     <!---delete option  Margin="95, 0, 0,-20"   -->
                     <Grid VerticalOptions="Start" Margin="15,0,0,0">
 
-                        <Button BackgroundColor="Transparent"
+                        <Button x:Name="Delete"
+                                Clicked="Mydeleteclicked"
+                            BackgroundColor="Transparent"
                         HeightRequest="25" 
                         WidthRequest="168"  
                         Margin="150,60,0,0"

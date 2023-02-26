@@ -1,86 +1,110 @@
-using System.Xml.Linq;
+using Firebase.Auth;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Lecturer;
+using Time_table.Student_Page;
 
-namespace Time_table;
-
-public partial class RegisterPage : ContentPage
+namespace Time_table
 {
-    UserRepo userRepository = new();
-    public RegisterPage()
+    public partial class RegisterPage : ContentPage
     {
-        InitializeComponent();
-    }
+        private readonly RegisterViewModel _viewModel;
 
-    private async void OnRegisterButtonClicked(object sender, EventArgs e)
-    {
-        try
+        public RegisterPage()
         {
-            string username = UsernameEntry.Text;
-            string password = PasswordEntry.Text;
-            string confirmPassword = ConfirmPasswordEntry.Text;
-            string email = EmailEntry.Text;
+            InitializeComponent();
 
-            if (String.IsNullOrEmpty(username))
+            _viewModel = new RegisterViewModel();
+            BindingContext = _viewModel;
+        }
+
+        private async void OnRegisterButtonClicked(object sender, EventArgs e)
+        {
+            var userType = _viewModel.SelectedUserType;
+            var username = UsernameEntry.Text;
+            var password = PasswordEntry.Text;
+            var confirmPassword = ConfirmPasswordEntry.Text;
+            var email = EmailEntry.Text;
+
+            if (string.IsNullOrEmpty(userType))
             {
-                await DisplayAlert("Warning", "Type name", "Ok");
+                await DisplayAlert("Error", "Please select a user type.", "OK");
                 return;
             }
-            if (String.IsNullOrEmpty(email))
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(email))
             {
-                await DisplayAlert("Warning", "Type email", "Ok");
+                await DisplayAlert("Error", "Please enter all registration fields.", "OK");
                 return;
             }
-            if (password.Length < 6)
-            {
-                await DisplayAlert("Warning", "Password should be 6 digit.", "Ok");
-                return;
-            }
-            if (String.IsNullOrEmpty(password))
-            {
-                await DisplayAlert("Warning", "Type password", "Ok");
-                return;
-            }
-            if (String.IsNullOrEmpty(confirmPassword))
-            {
-                await DisplayAlert("Warning", "Type Confirm password", "Ok");
-                return;
-            }
+
             if (password != confirmPassword)
             {
-                await DisplayAlert("Warning", "Password not match.", "Ok");
-                return;
-            }
-            if (!(email.Contains('@')))
-            {
-                await DisplayAlert("Error", "Email must include @", "OK");
+                await DisplayAlert("Error", "Password and confirmation password do not match.", "OK");
                 return;
             }
 
-            bool isSave = await userRepository.Register(email, password);
-            if (isSave)
+            try
             {
-                await DisplayAlert("Register user", "Registration completed", "Ok");
+                // Create new user in Firebase Authentication
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyCWpc9HMvOdnztiIrwAQF0NjpBQ0yEjHFk"));
+                var authResult = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password);
+
+                // Save registration data to Firebase Realtime Database using REST API
+                var client = new HttpClient();
+                var json = new Dictionary<string, object>
+                {
+                    {"username", username},
+                    {"email", email},
+                    {"userType", userType}
+                };
+                var content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(json), System.Text.Encoding.UTF8, "application/json");
+                var response = await client.PutAsync($"https://timetable-5ec3a-default-rtdb.firebaseio.com/{userType}s/{authResult.User.LocalId}.json", content);
+
+                // Display success message
+                await DisplayAlert("Registration Complete", "Your account has been created successfully.", "OK");
                 await Navigation.PushAsync(new LoginPage());
+
+                // Navigate to appropriate page based on user type
+
             }
-            else
+            catch (FirebaseAuthException ex)
             {
-                await DisplayAlert("Register user", "Registration failed", "Ok");
+                // Handle authentication errors
+                if (ex.Reason == AuthErrorReason.EmailExists)
+                {
+                    await DisplayAlert("Error", "The email address is already in use.", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Error", ex.Reason.ToString(), "OK");
+                }
             }
         }
-        catch (Exception exception)
+
+        public class RegisterViewModel : BindableObject
         {
-            if (exception.Message.Contains("EMAIL_EXISTS"))
+            private List<string> _userTypes = new() { "Lecturer", "Student" };
+            private string _selectedUserType;
+
+            public List<string> UserTypes
             {
-                await DisplayAlert("Warning", "Email exist", "Ok");
-            }
-            else
-            {
-                await DisplayAlert("Error", exception.Message, "Ok");
+                get { return _userTypes; }
+                set { _userTypes = value; OnPropertyChanged(); }
             }
 
+            public string SelectedUserType
+            {
+                get { return _selectedUserType; }
+                set { _selectedUserType = value; OnPropertyChanged(); }
+            }
+
+            protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+
+            public new event PropertyChangedEventHandler PropertyChanged;
         }
-
-
     }
 }
-
-

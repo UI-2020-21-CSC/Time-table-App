@@ -8,13 +8,13 @@
 
     <TabBar>
         <ShellContent Icon="home.png"
-                      ContentTemplate="{DataTemplate local:schedulepage1}" Route="schedulepage1"/>
+                      ContentTemplate="{DataTemplate local:addcourse}" Route="addcourse"/>
 
         <ShellContent Icon="task_calender.png"
-                      ContentTemplate="{DataTemplate local:schedulepage2}" Route="schedulepage2"/>
+                      ContentTemplate="{DataTemplate local:schedulepagecancel}" Route="schedulepagecancel"/>
 
         <ShellContent Icon="book.png"
-                      ContentTemplate="{DataTemplate local:cancelclass}" Route="cancelclass"/>
+                      ContentTemplate="{DataTemplate local:coursepage}" Route="coursepage"/>
 
         <ShellContent Icon="add.png"
                       ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>

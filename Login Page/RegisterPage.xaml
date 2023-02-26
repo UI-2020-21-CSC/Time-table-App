@@ -39,7 +39,16 @@
                 x:Name="EmailEntry" 
                 Keyboard="Email" 
                 BackgroundColor="Grey"/>
-            
+
+            <Label 
+                Text="Type" />
+             
+            <Picker x:Name="UserPicker"
+            Title="Select User Type"
+            ItemsSource="{Binding UserTypes}"
+            SelectedItem="{Binding SelectedUserType}"
+            BackgroundColor="Grey"/>
+
             <Button 
                 Text="Register" 
                 Clicked="OnRegisterButtonClicked" />

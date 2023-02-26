@@ -1,86 +1,104 @@
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Database.Query;
+using Lecturer;
 using Time_table.Admin_Page;
 using Time_table.Student_Page;
 
-namespace Time_table;
-
-public partial class LoginPage : ContentPage
+namespace Time_table
 {
-    public LoginPage()
+    public partial class LoginPage : ContentPage
     {
-        InitializeComponent();
-    }
+        private readonly FirebaseClient firebaseClient;
 
-    private UserRepo userRepository = new();
-    private async void Button_Clicked(object sender, EventArgs e)
-    {
-
-        try
+        public LoginPage()
         {
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
+            InitializeComponent();
+            firebaseClient = new FirebaseClient("https://timetable-5ec3a-default-rtdb.firebaseio.com/");
+        }
 
-            string token = await userRepository.SignIn(email, password);
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = txtEmail.Text;
+                string password = txtPassword.Text;
 
-            if (String.IsNullOrEmpty(email))
-            {
-                await DisplayAlert("Error", "You must enter an email.", "OK");
-                return;
-            }
+                if (string.IsNullOrEmpty(email))
+                {
+                    await DisplayAlert("Error", "You must enter an email.", "OK");
+                    return;
+                }
 
-            if (String.IsNullOrEmpty(password))
-            {
-                await DisplayAlert("Error", "You must enter a password", "OK");
-                return;
-            }
-            if (!(email.Contains('@')))
-            {
-                await DisplayAlert("Error", "Email must include @", "OK");
-                return;
-            }
-            if (!string.IsNullOrEmpty(token))
-            {
-                if (txtEmail.Text == "admin@user.com" && txtPassword.Text == "123456")
+                if (string.IsNullOrEmpty(password))
+                {
+                    await DisplayAlert("Error", "You must enter a password", "OK");
+                    return;
+                }
+
+                if (!email.Contains('@'))
+                {
+                    await DisplayAlert("Error", "Email must include @", "OK");
+                    return;
+                }
+
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyCWpc9HMvOdnztiIrwAQF0NjpBQ0yEjHFk"));
+                var auth = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
+
+                var StuUserType = await firebaseClient.Child("Students").Child(auth.User.LocalId).Child("userType").OnceSingleAsync<string>();
+                var LecUserType = await firebaseClient.Child("Lecturers").Child(auth.User.LocalId).Child("userType").OnceSingleAsync<string>();
+
+                if (email == "admin@user.com" && password == "123456")
                 {
                     await Navigation.PushAsync(new AdminHomePage());
                 }
-                else
+                else if (StuUserType == "Student")
                 {
                     await Navigation.PushAsync(new StuHomePage());
                 }
+                else if (LecUserType == "Lecturer")
+                {
+                    await Navigation.PushAsync(new MainPage());
+                }
+                else
+                {
+                    await DisplayAlert("Error", "User does not exist", "OK");
+                }
 
             }
-
+            catch (FirebaseAuthException ex)
+            {
+                switch (ex.Reason)
+                {
+                    case AuthErrorReason.WrongPassword:
+                        await DisplayAlert("Error", "Invalid password.", "OK");
+                        break;
+                    case AuthErrorReason.UnknownEmailAddress:
+                    case AuthErrorReason.InvalidEmailAddress:
+                        await DisplayAlert("Error", "Email not found.", "OK");
+                        break;
+                    case AuthErrorReason.Undefined:
+                        await DisplayAlert("Error", "Internet connection required.", "OK");
+                        break;
+                    default:
+                        await DisplayAlert("Error", ex.Message, "OK");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
         }
-        catch (Exception exception)
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            if (exception.Message.Contains("InvalidEmailAddress") || exception.Message.Contains("UnknownEmailAddress"))
-            {
-                await DisplayAlert("Error", "Email not found", "Ok");
-            }
-            else if (exception.Message.Contains("MissingPassword") || exception.Message.Contains("WrongPassword"))
-            {
-                await DisplayAlert("Error", "Password not found", "Ok");
-            }
-            else if (exception.Message.Contains("Undefined"))
-            {
-                await DisplayAlert("Error", "Internet Connection Required", "Ok");
-            }
-            else
-            {
-                await DisplayAlert("Error", exception.Message, "Ok");
-            }
+            Navigation.PushAsync(new RegisterPage());
+        }
+
+        private async void Forgot_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PasswordPage());
         }
     }
-
-    private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new RegisterPage());
-    }
-
-    private async void Forgot_Tapped(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new PasswordPage());
-    }
-
 }
-

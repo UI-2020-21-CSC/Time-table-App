@@ -32,31 +32,33 @@
                 <!-- Sign-in button -->
                 <Button Margin="0,5" BackgroundColor="White" Text="Sign in" TextColor="Blue" FontFamily="OpenSansBold" Clicked="Button_Clicked"/>
 
-                <!-- Links to forgot password and register pages -->
-                <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                    <Label HorizontalOptions="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Don't have an account? "/>
-                                <Span Text="Register" TextDecorations="Underline" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                <Label FontFamily="OpenSansRegular" FontSize="16" Text="Don't have an account?" TextColor="White" />
 
-                    <Label HorizontalOptions="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Forgot Password? " TextDecorations="Underline" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer x:Name ="ForgotTap" Tapped="Forgot_Tapped"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </StackLayout>
+                <!-- Link to register page -->
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Register" TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label FontFamily="OpenSansRegular" FontSize="16" Text="Forgot Password?" TextColor="White" />
+
+                <!-- Link to forgot password page -->
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Forgot Password? " TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name ="ForgotTap" Tapped="Forgot_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
         </StackLayout>
     </Grid>

@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Views;
+
 namespace Lecturer;
 
 public partial class addcourse : ContentPage
@@ -6,4 +8,9 @@ public partial class addcourse : ContentPage
 	{
 		InitializeComponent();
 	}
+	private void Dropdownclicked (object sender, EventArgs e)
+	{
+        var popup = new addcoursedropdown();
+        this.ShowPopup(popup);
+    }
 }

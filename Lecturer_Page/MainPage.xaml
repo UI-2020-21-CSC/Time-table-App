@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lecturer.MainPage">
 
-    <ScrollView BackgroundColor="#f2f2f8">
+    <ScrollView BackgroundColor="#f2f2f8" >
 
 
         <VerticalStackLayout Margin="12, 0, -5, 0">
@@ -17,7 +17,9 @@
                        Margin="5, 20, 15, 5"
                        HorizontalOptions="Start"
                        VerticalOptions="Center"/>
-                <Button Background="Transparent"
+                <Button x:Name="Logout"
+                        Clicked="LogoutClick"
+                        Background="Transparent"
                         HeightRequest="30"
                         WidthRequest="50"
                         VerticalOptions="Center"
@@ -51,8 +53,12 @@
                                 Margin="0, 15, 25, 0"/>
 
                 <!---logout button start-->
-                <Grid Margin="0, 0, 0, 80">
-                    <Button BackgroundColor="White"
+                <Grid x:Name="outlog"
+                      IsVisible="False"
+                    Margin="0, 0, 0, 80">
+                    <Button x:Name="MLclick"
+                            Clicked="MYactivelogoutclicked"
+                        BackgroundColor="White"
                         BorderColor="Black"
                         BorderWidth="2"
                         CornerRadius="10"
@@ -218,7 +224,9 @@
                         HeightRequest="131"
                         WidthRequest="400"
                         BorderColor="Transparent"/>
-                <Button Background="Transparent"
+                <Button x:Name="CLasscancel"
+                        Clicked="CancClick"
+                        Background="Transparent"
                         HeightRequest="50"
                         WidthRequest="25"
                         HorizontalOptions="End"
@@ -255,7 +263,23 @@
 
                 </Grid>
 
-                <Grid>
+                <Grid x:Name="CClass"
+                      IsVisible="False">
+                    <Button Background="white"
+                        Margin="0, 15, 45, 0"
+                        HeightRequest="42"
+                        WidthRequest="125"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                        BorderColor="Transparent"/>
+
+                    <Label Text="Cancel Class"
+                                Margin="0, 15, 65, 0"
+                               TextColor="Black"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
 
                 </Grid>
 

@@ -133,7 +133,9 @@
                    
             />
             </Frame>
-            <Button BackgroundColor="Transparent" HeightRequest="15" 
+            <Button x:Name="Dropdown"
+                    Clicked="Dropdownclicked"
+                BackgroundColor="Transparent" HeightRequest="15" 
                         WidthRequest="15" VerticalOptions="Center" 
                         HorizontalOptions="End"
                         Margin="0, 0, 38, 20"/>
