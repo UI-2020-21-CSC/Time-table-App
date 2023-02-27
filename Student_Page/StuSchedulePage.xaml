@@ -1,32 +1,184 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Time_table.Student_Page.StuSchedulePage"
-             Title="StuSchedulePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Life no suppose dey hard!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label
-            Text="Testing the push to github"
+             xmlns:model="clr-namespace:Time_table.Model"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
+             
+             x:Class="Time_table.Student_Page.StuSchedulePage">
+
+
+    <Grid
+            RowDefinitions="Auto,Auto,*"
+            ColumnDefinitions="*,*"
+            RowSpacing="5">
+
+        <calendar:SfCalendar 
+            x:Name="Calendar"
+
+            View="Month"
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            Grid.RowSpan="1"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            MaximumHeightRequest="200"
+            SelectionMode="Single"
+            CanToggleDaySelection="true"
+            EnablePastDates="false"
+            SelectionChanged="OnDaySelectionChanged"
+            Tapped="OnDayTapped">
+
+            <calendar:SfCalendar.MonthView>
+                <calendar:CalendarMonthView
+                        
+                        WeekendDatesBackground="Grey"
+                        FirstDayOfWeek="Monday"
+                        NumberOfVisibleWeeks="4"/>
+            </calendar:SfCalendar.MonthView>
+
+
+        </calendar:SfCalendar>
+
+        <BoxView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HeightRequest="5"
+            WidthRequest="50"
+            Color="LightGrey"
+            HorizontalOptions="Center"
             VerticalOptions="Center"
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            CornerRadius="4"/>
+
+        <CollectionView
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.RowSpan="1"
+                Grid.ColumnSpan="2">
+
+            <CollectionView.ItemsSource>
+
+                <x:Array Type="{x:Type model:Course}">
+
+                    <model:Course Id="1"
+                                      Name="CSC235"
+                                      FullName="Introduction to OOP" />
+
+                    <model:Course Id="2"
+                                      Name="CSC242"
+                                      FullName="Discrete Math" />
+
+                    <model:Course Id="3"
+                                      Name="CSC213"
+                                      FullName="Digital And Logic Design" />
+
+                    <model:Course Id="4"
+                                      Name="CSC231"
+                                      FullName="Scientific Programming" />
+
+                    <model:Course Id="5"
+                                      Name="CSC236"
+                                      FullName="Assembly Language Programming" />
+
+                    <model:Course Id="5"
+                                      Name="MAT213"
+                                      FullName="Algebra(For Non-Major" />
+
+                    <model:Course Id="5"
+                                      Name="STA211"
+                                      FullName="Probability II" />
+
+                </x:Array>
+
+            </CollectionView.ItemsSource>
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate x:DataType="model:Course">
+
+                    <Grid
+                                RowDefinitions="Auto,*,*, Auto"
+                                ColumnDefinitions="10,*,10,10"
+                                Margin="5"
+                                Padding="5">
+
+                        <Label
+                                    Text="o"
+                                    TextColor="#2E3559"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontSize="10"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
+
+                        <Label
+                                    Text="{Binding FullName}"
+                                    TextColor="#003559"
+                                    FontSize="20"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Start"
+                                    SemanticProperties.Description="This is the full name of the course"/>
+
+                        <Label
+                                    Text="{Binding Name}"
+                                    TextColor="DarkGrey"
+                                    FontSize="10"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    SemanticProperties.Description="This is the course code"/>
+
+                        <Label
+                                    Text="---"
+                                    TextColor="Grey"
+                                    FontSize="10"
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    SemanticProperties.Description="This is the menu icon"/>
+
+                        <Label
+                                    Text="k"
+                                    TextColor="Grey"
+                                    FontSize="10"
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
+
+                        <BoxView
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            HeightRequest="2"
+                            Color="LightGrey"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"
+                            CornerRadius="1"/>
+                    </Grid>
+
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
 </ContentPage>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
