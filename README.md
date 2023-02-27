@@ -70,6 +70,93 @@ In this repository, we will create a mobile timetable app using .NET Multi-platf
   * If the signed-in user is a student, navigate to the student home page.
   * If the signed-in user is a lecturer, navigate to the lecturer home page.
   * If the signed-in user is not recognized, display an error message.
+   ### Code snippet
+   ````
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = txtEmail.Text;
+                string password = txtPassword.Text;
+
+                if (string.IsNullOrEmpty(email))
+                {
+                    await DisplayAlert("Error", "You must enter an email.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(password))
+                {
+                    await DisplayAlert("Error", "You must enter a password", "OK");
+                    return;
+                }
+
+                if (!email.Contains('@'))
+                {
+                    await DisplayAlert("Error", "Email must include @", "OK");
+                    return;
+                }
+
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyCWpc9HMvOdnztiIrwAQF0NjpBQ0yEjHFk"));
+                var auth = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
+
+                var StuUserType = await firebaseClient.Child("Students").Child(auth.User.LocalId).Child("userType").OnceSingleAsync<string>();
+                var LecUserType = await firebaseClient.Child("Lecturers").Child(auth.User.LocalId).Child("userType").OnceSingleAsync<string>();
+
+                if (email == "admin@user.com" && password == "123456")
+                {
+                    await Navigation.PushAsync(new AdminHomePage());
+                }
+                else if (StuUserType == "Student")
+                {
+                    await Navigation.PushAsync(new StuHomePage());
+                }
+                else if (LecUserType == "Lecturer")
+                {
+                    await Navigation.PushAsync(new MainPage());
+                }
+                else
+                {
+                    await DisplayAlert("Error", "User does not exist", "OK");
+                }
+
+            }
+            catch (FirebaseAuthException ex)
+            {
+                switch (ex.Reason)
+                {
+                    case AuthErrorReason.WrongPassword:
+                        await DisplayAlert("Error", "Invalid password.", "OK");
+                        break;
+                    case AuthErrorReason.UnknownEmailAddress:
+                    case AuthErrorReason.InvalidEmailAddress:
+                        await DisplayAlert("Error", "Email not found.", "OK");
+                        break;
+                    case AuthErrorReason.Undefined:
+                        await DisplayAlert("Error", "Internet connection required.", "OK");
+                        break;
+                    default:
+                        await DisplayAlert("Error", ex.Message, "OK");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
+
+        private async void Forgot_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PasswordPage());
+        }   
+   ````
+
 
 #### Getting the course's a user is taking
   * Retrieve the student's course list from the database using their user ID.
@@ -159,4 +246,5 @@ In this repository, we will create a mobile timetable app using .NET Multi-platf
        ```` 
 
 
-## Conclusion:
+
+
