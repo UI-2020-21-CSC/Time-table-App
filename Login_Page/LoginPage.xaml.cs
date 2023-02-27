@@ -50,7 +50,17 @@ namespace Time_table
 
                 if (email == "admin@user.com" && password == "123456")
                 {
-                    await Navigation.PushAsync(new AdminHomePage());
+                    //await Shell.Current.GoToAsync("VenueListPage");
+                    var venueService = new VenueService();
+                    var viewModel = new VenueListPageViewModel(venueService);
+                    var venueListPage = new VenueListPage(viewModel);
+                    await Navigation.PushAsync(venueListPage); 
+                    
+                    //var viewModel = new AdminHomePageViewModel();
+                    //var adminHomePage = new AdminHomePage(viewModel);
+                    //await Navigation.PushAsync(adminHomePage);
+
+                    //await Navigation.PushAsync(new AdminHomePage());
                 }
                 else if (StuUserType == "Student")
                 {
