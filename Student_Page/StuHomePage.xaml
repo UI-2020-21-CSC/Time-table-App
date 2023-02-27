@@ -3,10 +3,394 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Time_table.Student_Page.StuHomePage"
              Title="StuHomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView BackgroundColor="#ffffff">
+
+
+        <VerticalStackLayout Margin="25, 20, 25, 20">
+            <!--Begining of welcome message and logout icon-->
+            <Grid>
+				<Label LineBreakMode="WordWrap"
+                       	FontSize="16"
+                        TextColor="#0A0E26"
+                        Margin="0, 0, 0, 0"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Welcome, " 
+								  FontAttributes="Bold"
+                                  FontFamily="Montserrat_Black"/>
+                            <Span Text="John Doe" 
+								  FontFamily="Montserrat_Medium"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button 
+                        Background="Transparent"
+                        BorderColor="Transparent"
+                        HeightRequest="30"
+                        WidthRequest="50"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        Margin="0,0,0,0"/>
+                <Image Source="logout_icon.png"
+                       HeightRequest="24"
+                       WidthRequest="48"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Margin="0, 0, 0, 0"/>
+
+            </Grid>
+            <!--End of welcome message and logout icon-->
+
+
+
+            <!--Beginning of section for total classes for the day including the logout button-->
+            <Grid Margin="0, 5, 0, 0">
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Background="#735bf2"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="87"
+                        CornerRadius="20"
+                        
+                        BorderColor="Transparent"/>
+
+                <Image Source="calendar_icon.png"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                               WidthRequest="91.24"
+                               HeightRequest="90.32"
+                               Margin="0, 0, 6, -10"/>
+
+                <!---Beginning of logout button-->
+                <Grid Margin="0, 0, 0, 0">
+                    <Button
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        CornerRadius="10"
+                        HeightRequest="32"
+                        WidthRequest="89"
+                        Text="Logout"
+                        FontAttributes="Bold"
+                        FontFamily="Montserrat_Regular"
+                        FontSize="10"
+                        TextColor="Black"
+                        VerticalOptions="Start"
+                        HorizontalOptions="End"
+                        Margin="0, -5, 3, 0"/>
+                </Grid>
+                <!---End of logout button-->
+				
+                <!--Begining of text for number of classes for the day-->
+                <Grid Margin="25, 0, 15, 0"
+                      VerticalOptions ="Center">
+
+                    <Label Text="You have"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   FontSize="16"/>
+
+                    <Label Text="4 classes today"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Bold"
+                                   FontSize="16"
+                                   Margin="0, 20, 15, 0"/>
+
+                </Grid>
+				<!--End of text for number of classes for the day-->
+
+            </Grid>
+            <!--End of section for total classes for the day including the logout button-->
+
+
+
+            <!--Beginning of section for courses-->
+			
+			 <!--Begining of text for courses offered-->
+            <Label Text="Courses"
+                    FontFamily="Montserrat_Bold"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="24"
+                   TextColor="#0A0E26"
+                    FontAttributes="Bold"
+                   Margin="0, 5, 0, 0"/>
+
+            <Label Text="Courses you're offering"
+                    FontFamily="Montserrat_Regular"
+                    SemanticProperties.HeadingLevel="Level4"
+                    FontSize="12"
+                   TextColor="#9F9F9F"
+                    Margin="0, 0, 0, 0"/>
+            <!--End of text for courses offered-->
+
+
+
+            <ScrollView Orientation="Horizontal" Margin="0, 8, 0, 0" >
+                <Grid RowDefinitions="147, 147, 147, 147"
+                  ColumnDefinitions="169,169,169,169"
+                  ColumnSpacing="15" HeightRequest="169">
+
+                    <Grid Grid.Row="0" Grid.Column="0">
+
+                        <Button Background="#582e57" CornerRadius="20" />
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="CSC 235"
+                                                TextColor="White"
+                                                FontFamily="Montserrat_Bold"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"/>
+
+                            <Label Text="C Programming"
+                                           TextColor="White"
+                                           FontFamily="Montserrat_Regular"
+                                           HorizontalOptions="Center"
+                                           FontSize="14"
+                                           Margin="0, 32, 0, 0"/>
+
+                        </Grid>
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+
+                        <Button  Background="#8E2236" CornerRadius="20"/>
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="CSC 102"
+                                                TextColor="White"
+                                                FontFamily="Montserrat_Bold"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"/>
+
+                            <Label Text="C Programming"
+                                           TextColor="White"
+                                           FontFamily="Montserrat_Regular"
+                                           HorizontalOptions="Center"
+                                           FontSize="14"
+                                           Margin="0, 32, 0, 0"/>
+
+                        </Grid>
+
+                    </Grid>
+				
+			
+                    <Grid Grid.Row="0" Grid.Column="2">
+
+                        <Button  Background="#0A0E26" CornerRadius="20" />
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="STA 221"
+                                                TextColor="White"
+                                                FontFamily="Montserrat_Bold"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"/>
+
+                            <Label Text="Inference II"
+                                           TextColor="White"
+                                           FontFamily="Montserrat_Regular"
+                                           HorizontalOptions="Center"
+                                           FontSize="14"
+                                           Margin="0, 32, 0, 0"/>
+
+                        </Grid>
+
+                    </Grid>
+				
+			
+			        <Grid Grid.Row="0" Grid.Column="3">
+
+                        <Button  Background="#6a1736" CornerRadius="20"/>
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="GES 201"
+                                                TextColor="White"
+                                                FontFamily="Montserrat_Bold"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"/>
+
+                            <Label Text="English II"
+                                           TextColor="White"
+                                           FontFamily="Montserrat_Regular"
+                                           HorizontalOptions="Center"
+                                           FontSize="14"
+                                           Margin="0, 32, 0, 0"/>
+
+                        </Grid>
+
+                    </Grid>
+			
+                </Grid>
+			</ScrollView> 
+            
+            <!--Beginning of sect-->
+
+            <Grid ColumnDefinitions="7.45,7.45,7.45,7.45"
+                  RowDefinitions="7.45,7.45,7.45,7.45"
+                  HorizontalOptions="Center"
+                  ColumnSpacing="3">
+                <Ellipse Grid.Row="0" Grid.Column="0" Fill = "#0A0E26"/>
+                <Ellipse Grid.Row="0" Grid.Column="1" Fill = "#8F9BB3"/>
+                <Ellipse Grid.Row="0" Grid.Column="2" Fill = "#8F9BB3"/>
+                <Ellipse Grid.Row="0" Grid.Column="3" Fill = "#8F9BB3"/>
+
+            </Grid>
+
+
+
+            <!--Upcoming Classes Section-->
+            <Label
+               Text="Upcoming Classes"
+               FontFamily="Montserrat_Bold"
+               SemanticProperties.HeadingLevel="Level1"
+               FontSize="24"
+               TextColor="#0A0E26"
+               FontAttributes="Bold"/>
+
+
+            <Label
+                Text="Classes you have for the day"
+                FontFamily="Montserrat_Regular"
+                SemanticProperties.HeadingLevel="Level4"
+                FontSize="12"
+                TextColor="#9F9F9F"/>
+
+            
+            <!--Classes for the day divs section-->
+            <ScrollView Margin="0,15,0,0" Orientation="Vertical">
+                <Grid 
+                    RowDefinitions="131,131"
+                    ColumnDefinitions="*"
+                    RowSpacing="15">
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <Button Background="#735bf2"
+                            CornerRadius="20"
+                            BorderColor="Transparent"/>
+                        <Button Background="Transparent"
+                            BorderColor="Transparent"
+                            HeightRequest="50"
+                            WidthRequest="25"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            Margin="0,20,20,60"/>
+                        <Image Source="dots.png"
+                            HeightRequest="25.88"
+                            WidthRequest="5.97"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            Margin="0, 0, 30, 60"/>
+
+                        <Image Source="school_cap_icon.png"
+                           HeightRequest="86"
+                           WidthRequest="100"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           Margin="0, 20, 60, 0"/>
+
+                        <Grid Margin="20, 15, 0, 0">
+
+                            <Label Text=" CSC 235"
+                                       SemanticProperties.HeadingLevel="Level1"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontFamily="Montserrat_Bold"
+                                       FontSize="32"/>
+
+                            <Label Text="C Programming"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       FontSize="14"
+                                       Margin="10, 37, 0, 0"/>
+
+
+                        </Grid>
+
+
+                        <Grid Margin="20, 0, 0, 0">
+                            <Image Source="time_icon.png"
+                                       HeightRequest="10"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="End"
+                                       Margin="10,0,0,17"
+                                       />
+                            <Label Text="9:00 AM"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       VerticalOptions="End"
+                                       FontSize="12"
+                                       Margin="26,0,0,13.5"/>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Button Background="#228E47 "
+                            CornerRadius="20"
+                            BorderColor="Transparent"/>
+                        <Button Background="Transparent"
+                            BorderColor="Transparent"
+                            HeightRequest="50"
+                            WidthRequest="25"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            Margin="0,20,20,60"/>
+
+                        <Image Source="dots.png"
+                                   HeightRequest="25.88"
+                                   WidthRequest="5.97"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                   Margin="0, 2, 30, 60"/>
+
+                        <Image Source="school_cap_icon.png"
+                                   HeightRequest="86"
+                                   WidthRequest="100"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                    Margin="0, 20, 60, 0"/>
+
+                        <Grid Margin="20, 15, 0, 0">
+
+                            <Label Text=" CSC 102"
+                                       SemanticProperties.HeadingLevel="Level1"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       FontFamily="Montserrat_Bold"
+                                       FontSize="32"/>
+
+                            <Label Text="Python"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       FontSize="14"
+                                       Margin="10, 37, 15, 5"/>
+
+                        </Grid>
+
+
+                        <Grid Margin="20, 0 ,0, 0">
+                            <Image Source="time_icon.png"
+                                       HeightRequest="10"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="End"
+                                       Margin="10,0,0,17"
+                                       />
+                            <Label Text="1:00 PM"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       VerticalOptions="End"
+                                       FontSize="12"
+                                       Margin="26,0,0,13.5"/>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+				
+			</ScrollView>
+   
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
