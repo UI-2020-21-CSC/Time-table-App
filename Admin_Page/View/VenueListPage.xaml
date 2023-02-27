@@ -8,15 +8,16 @@
              Title="{Binding Title}">
 
     <VerticalStackLayout>
-    <CollectionView ItemsSource="{Binding Venues}" SelectionMode="None">
+    <CollectionView ItemsSource="{Binding Venues}" SelectionMode="None" HeightRequest="600">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:Venue">
-                <VerticalStackLayout VerticalOptions="Center">
-                    <Label Text="{Binding VenueName}"/>
+                <VerticalStackLayout VerticalOptions="Center" Padding="20">
+                    <Label Text="{Binding VenueName}" FontSize="20"/>
                     <Label Text="{Binding ShortName}"/>
                     <Label Text="{Binding Capacity}"/>
-                    
-                </VerticalStackLayout>
+                        <Button Text="Delete Venue" Padding="30" />
+
+                    </VerticalStackLayout>
             </DataTemplate>
             
         </CollectionView.ItemTemplate> 
@@ -28,6 +29,13 @@
         VerticalOptions="Center"
         HorizontalOptions="Center"
         Command="{Binding GetVenuesCommand}"/>
+        
+        
+        <Button 
+        Text="Add New Venue"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Command="{Binding AddOrEditVenueCommand}"/>
         
     </VerticalStackLayout>
 

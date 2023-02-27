@@ -62,5 +62,87 @@ namespace Time_table.Admin_Page.ViewModel
             }
         }
 
+        [RelayCommand]
+        async Task AddOrEditVenueAsync(Venue venue)
+        {
+            if (IsVenueLoading) return;
+
+            try
+            {
+                IsVenueLoading = true;
+
+                bool success = await venueService.AddOrEditVenue();
+
+                if (success)
+                {
+                    var venues = await venueService.GetAllVenues();
+
+                    if (Venues.Count != 0) Venues.Clear();
+
+                    foreach(Venue eachVenue in venues)
+                    {
+                        Venues.Add(eachVenue);
+                    }
+                }
+                else
+                {
+                    // Display Alert;
+                    //await DisplayAlert("Error", "Invalid password.", "OK");
+                    Console.WriteLine("Failed to add or edit venue");
+                }
+
+            }catch (Exception e)
+            {
+                // Display Alert
+                Console.WriteLine("Exception: {0}", e.Message);
+            }
+            finally
+            {
+                IsVenueLoading = false;
+            }
+        }
+
+
+        [RelayCommand]
+        async Task DeleteAsync(Venue venue)
+        {
+            if (IsVenueLoading) return;
+
+            try
+            {
+                IsVenueLoading = true;
+
+                bool success = await venueService.DeleteVenue(venue.Key);
+
+                if (success)
+                {
+                    var venues = await venueService.GetAllVenues();
+
+                    if (Venues.Count != 0) Venues.Clear();
+
+                    foreach (Venue eachVenue in venues)
+                    {
+                        Venues.Add(eachVenue);
+                    }
+                }
+                else
+                {
+                    // Display Alert;
+                    //await DisplayAlert("Error", "Invalid password.", "OK");
+                    Console.WriteLine("Failed to delete venue");
+                }
+
+            }
+            catch (Exception e)
+            {
+                // Display Alert
+                Console.WriteLine("Exception: {0}", e.Message);
+            }
+            finally
+            {
+                IsVenueLoading = false;
+            }
+        }
+
     }
 }

@@ -11,6 +11,7 @@ namespace Time_table.Admin_Page.Model
         public string ShortName { get; set; }
         public string VenueName { get; set; }
         public int Capacity { get; set; }
+        public string Key { get; set; }
 
     }
 }
