@@ -8,6 +8,7 @@
 
     <ShellContent
         Title="Home"
+        Shell.NavBarIsVisible="False"
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="MainPage" />
 
