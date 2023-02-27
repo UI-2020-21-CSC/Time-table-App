@@ -1,4 +1,6 @@
-﻿namespace Time_table;
+﻿using Time_table.Admin_Page;
+
+namespace Time_table;
 
 public partial class App : Application
 {
@@ -6,6 +8,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        MainPage = new NavigationPage(new LoginPage());
-    }
+		MainPage = new NavigationPage(new LoginPage());
+
+
+	}
 }
