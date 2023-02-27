@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Time_table.RegisterPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label 
+                Text="Username" />
+            
+            <Entry 
+                x:Name="UsernameEntry"
+                BackgroundColor="Grey"/>
+            
+            <Label 
+                Text="Password" />
+            
+            <Entry 
+                x:Name="PasswordEntry" 
+                IsPassword="True"
+                BackgroundColor="Grey"/>
+            
+            <Label 
+                Text="Confirm Password" />
+            
+            <Entry 
+                x:Name="ConfirmPasswordEntry" 
+                IsPassword="True" 
+                BackgroundColor="Grey"/>
+            
+            <Label 
+                Text="Email" />
+            
+            <Entry 
+                x:Name="EmailEntry" 
+                Keyboard="Email" 
+                BackgroundColor="Grey"/>
+
+            <Label 
+                Text="Type" />
+             
+            <Picker x:Name="UserPicker"
+            Title="Select User Type"
+            ItemsSource="{Binding UserTypes}"
+            SelectedItem="{Binding SelectedUserType}"
+            BackgroundColor="Grey"/>
+
+            <Button 
+                Text="Register" 
+                Clicked="OnRegisterButtonClicked" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

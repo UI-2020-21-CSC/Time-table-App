@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.popuptest">
+
+    <ScrollView BackgroundColor="White   ">
+        <VerticalStackLayout>
+            <Frame BackgroundColor="Transparent"
+                   HeightRequest="183"
+                   WidthRequest="391"
+                   Margin="0,50,0,0">
+                <Grid>
+
+                    <Grid  Margin="0,0,-320,0">
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                WidthRequest="30"
+                                Margin="0,-5,0,0"
+                                VerticalOptions="Start"/>
+                        <Image Source="close.png"
+                               HeightRequest="16.46"
+                               WidthRequest="16.46"
+                               VerticalOptions="Start"/>
+                    </Grid>
+
+                    <Grid Margin="0,0,0,0">
+                        <Label Text="Are you sure you want to log out?"
+                       TextColor="#8F9BB3"
+                        FontFamily="Montserrat_Regular"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+
+                        <Grid>
+                            <Grid RowDefinitions="Auto,Auto,*"
+                              ColumnDefinitions="*,*"
+                              Margin="0, 100, 0, 0">
+
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Button Text="Yes" 
+                                TextColor="White"
+                                FontFamily="Montserrat_Bold"
+                                FontSize="16"
+                                BackgroundColor="#0A0E26"
+                                WidthRequest="109"
+                                HeightRequest="38"/>
+                                </Grid>
+
+                                <Grid Grid.Row="0" Grid.Column="1">
+
+                                    <Button Text="No" 
+                                TextColor="White"
+                                FontFamily="Montserrat_Bold"
+                                FontSize="16"
+                                BackgroundColor="#0A0E26"
+                                WidthRequest="109"
+                                HeightRequest="38"/>
+
+
+                                </Grid>
+                            </Grid>
+
+
+                        </Grid>
+                    </Grid>
+
+
+
+
+
+
+                </Grid>
+            </Frame>
+
+
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</toolkit:Popup>

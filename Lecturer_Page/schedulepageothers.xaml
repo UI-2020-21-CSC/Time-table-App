@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.schedulepageothers">
+
+
+    <ScrollView BackgroundColor="White">
+        <VerticalStackLayout>
+
+
+            <Frame HeightRequest="338"
+               WidthRequest="391" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               BackgroundColor="Transparent"
+               BorderColor="#8F9BB3"
+               
+               Margin="0,50,0,0" 
+               CornerRadius="20">
+
+                <Grid>
+                    <Grid  Margin="0,0,-320,0">
+                        <Button x:Name="BtnClose"
+                                Clicked="Closeothersclicked"
+                            BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                WidthRequest="30"
+                                Margin="0,-5,0,0"
+                                VerticalOptions="Start"/>
+                        <Image Source="close.png"
+                               HeightRequest="16.46"
+                               WidthRequest="16.46"
+                               VerticalOptions="Start"/>
+                    </Grid>
+                    <Grid>
+                        <Label Margin="0,30,0,0"
+                            Text="Others?"
+                            TextColor="#8F9BB3"
+                            FontFamily="Montserrat_Regular"
+                            FontSize="14"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Start"/>
+                    </Grid>
+                    <Grid>
+                        <Entry 
+                               PlaceholderColor="Black"
+                               WidthRequest="391"
+                               Margin="0,80,0,0"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        <Image Source="liner.png"
+                               WidthRequest="365"
+                               HeightRequest="30"
+                               Margin="0,-60,0,0"/>
+
+                        <Label Text="State your reasons..."
+                                FontFamily="Montserrat_Regular"
+                                FontSize="12"
+                                HeightRequest="53"
+                                WidthRequest="350"
+                                TextColor="#9F9F9F"
+                                Margin="0,20,0,0" 
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                        
+                    </Grid>
+                    <Button x:Name="BtnSubmitothers"
+                            Clicked="Submitothersclicked"
+                        BackgroundColor="#735BF2"
+                            HeightRequest="37"
+                            WidthRequest="84"
+                            CornerRadius="20"
+                            Text="submit"
+                            FontFamily="Montserrat_Regular"
+                            FontSize="14"
+                            TextColor="White"
+                            Margin="0,0,0,10"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            />
+
+
+
+
+
+
+                </Grid>
+
+
+
+            </Frame>
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</toolkit:Popup>

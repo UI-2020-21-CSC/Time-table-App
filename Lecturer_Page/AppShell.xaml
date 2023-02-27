@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Lecturer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Lecturer"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent Icon="home.png"
+                      ContentTemplate="{DataTemplate local:addcourse}" Route="addcourse"/>
+
+        <ShellContent Icon="task_calender.png"
+                      ContentTemplate="{DataTemplate local:schedulepagecancel}" Route="schedulepagecancel"/>
+
+        <ShellContent Icon="book.png"
+                      ContentTemplate="{DataTemplate local:coursepage}" Route="coursepage"/>
+
+        <ShellContent Icon="add.png"
+                      ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+
+    </TabBar>
+
+
+</Shell>

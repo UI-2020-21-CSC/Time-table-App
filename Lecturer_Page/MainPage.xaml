@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.MainPage">
+
+    <ScrollView BackgroundColor="#f2f2f8" >
+
+
+        <VerticalStackLayout Margin="12, 0, -5, 0">
+            <!--Welcome lecturer with icon and logout begin-->
+            <Grid>
+                <Label Text="Welcome, Dr. Ayinla"
+                       FontAttributes="Bold"
+                       FontFamily="Montserrat_Bold"
+                       FontSize="16"
+                       TextColor="#0A0E26"
+                       Margin="5, 20, 15, 5"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+                <Button x:Name="Logout"
+                        Clicked="LogoutClick"
+                        Background="Transparent"
+                        HeightRequest="30"
+                        WidthRequest="50"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        Margin="0,12,10,0"/>
+                <Image Source="group2.png"
+                       HeightRequest="24"
+                       WidthRequest="48"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Margin="0, 12, 10, 0"/>
+                
+            </Grid>
+            <!--Welcome lecturer with icon and logout begin-->
+
+
+
+            <!--Total class for the day begin-->
+            <Grid>
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Background="#735bf2"
+                        Margin="0, 20, 15, 5"
+                        HeightRequest="87"
+                        WidthRequest="400"
+                        BorderColor="Transparent"/>
+
+                <Image Source="calender.png"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                                Margin="0, 15, 25, 0"/>
+
+                <!---logout button start-->
+                <Grid x:Name="outlog"
+                      IsVisible="False"
+                    Margin="0, 0, 0, 80">
+                    <Button x:Name="MLclick"
+                            Clicked="MYactivelogoutclicked"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        CornerRadius="10"
+                        HeightRequest="32"
+                        WidthRequest="89"
+                        Text="Logout"
+                        FontAttributes="Bold"
+                        FontFamily="Montserrat_Regular"
+                        FontSize="10"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Margin="0, 0, 10, 0"/>
+                </Grid>
+                <!---logout button end-->
+
+                <Grid Margin="10, 40, 10, 10">
+
+                    <Label Text="You have"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   FontSize="16"/>
+
+                    <Label Text="4 classes today"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Bold"
+                                   FontSize="16"
+                                   Margin="0, 20, 15, 5"/>
+
+                </Grid>
+
+            </Grid>
+            <!--Total class for the day end-->
+
+
+
+            <!--Courses section begin-->
+            <Label Text="Courses"
+                    FontFamily="Montserrat_Bold"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="24"
+                   TextColor="#0A0E26"
+                    FontAttributes="Bold"
+                   Margin="10, 20, 15, 5"/>
+
+            <Label Text="Courses you're lecturing"
+                    FontFamily="Montserrat_Regular"
+                    SemanticProperties.HeadingLevel="Level4"
+                    FontSize="12"
+                   TextColor="#9F9F9F"
+                    Margin="10, 0, 0, 0"
+                    />
+
+
+
+
+
+            <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="0, 20, 15, 5">
+
+                <Grid Grid.Row="0" Grid.Column="0">
+
+                    <Button Background="#582e57" Margin="0, 0, 10, 0" />
+                    <Grid Margin="10, 40, 10, 10">
+                        <Label Text="CSC 235"
+                                            TextColor="White"
+                                            FontFamily="Montserrat_Bold"
+                                            FontAttributes="Bold"
+                                            HorizontalOptions="Center"
+                                            FontSize="20"/>
+
+                        <Label Text="C Programming"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       HorizontalOptions="Center"
+                                       FontSize="14"
+                                       Margin="0, 32, 15, 0"/>
+
+                    </Grid>
+
+                </Grid>
+
+
+                <Grid Grid.Row="0" Grid.Column="1">
+
+                    <Button  Background="#8E2236" Margin="0, 0, 10, 0" />
+                    <Grid Margin="10, 40, 10, 10">
+                        <Label Text="CSC 102"
+                                            TextColor="White"
+                                            FontFamily="Montserrat_Bold"
+                                            FontAttributes="Bold"
+                                            HorizontalOptions="Center"
+                                            FontSize="20"/>
+
+                        <Label Text="C Programming"
+                                       TextColor="White"
+                                       FontFamily="Montserrat_Regular"
+                                       HorizontalOptions="Center"
+                                       FontSize="14"
+                                       Margin="0, 32, 15, 5"/>
+
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+            <!--Courses section end-->
+
+            <Grid Margin="0,0,0,0">
+                <Ellipse Fill ="#8F9BB3"
+                             HeightRequest="7.45"
+                             WidthRequest="7.45"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center"
+                                Margin="0,0,12,10"/>
+                <Ellipse Fill ="#8F9BB3"
+                              HeightRequest="7.45"
+                             WidthRequest="7.45"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Margin="0,0,30,0"/>
+                <Ellipse Fill ="#8F9BB3"
+                              HeightRequest="7.45"
+                             WidthRequest="7.45"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Margin="0,0,50,0"/>
+                <Ellipse Fill ="#0A0E26"
+                              HeightRequest="7.45"
+                             WidthRequest="7.45"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Center"
+                             Margin="0,0,70,0"/>
+
+            </Grid>
+
+
+
+            <!--Second Grid-->
+            <Label
+            Margin="10, 20, 15, 5"
+            Text="Upcoming Classes"
+            FontFamily="Montserrat_Bold"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="24"
+                TextColor="#0A0E26"
+            FontAttributes="Bold"/>
+
+
+            <Label
+                Margin="10, 0, 0, 5"
+                Text="Classes you have for the day"
+                FontFamily="Montserrat_Regular"
+                SemanticProperties.HeadingLevel="Level4"
+                FontSize="12"
+                TextColor="#9F9F9F"/>
+
+
+            <Grid>
+                <Button Background="#735bf2"
+                        Margin="0, 20, 15, 5"
+                        HeightRequest="131"
+                        WidthRequest="400"
+                        BorderColor="Transparent"/>
+                <Button x:Name="CLasscancel"
+                        Clicked="CancClick"
+                        Background="Transparent"
+                        HeightRequest="50"
+                        WidthRequest="25"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0,20,20,60"/>
+                <Image Source="dots.png"
+                        HeightRequest="25.88"
+                        WidthRequest="5.97"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0, 20, 30, 60"/>
+
+                <Image Source="cap.png"
+                               HeightRequest="86"
+                               WidthRequest="100"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                                Margin="0, 20, 60, 0"/>
+
+                <Grid Margin="10, 40, 10, 10">
+
+                    <Label Text=" CSC 235"
+                                   SemanticProperties.HeadingLevel="Level1"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Bold"
+                                   FontSize="32"/>
+
+                    <Label Text="C Programming"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   FontSize="14"
+                                   Margin="10, 37, 15, 5"/>
+
+
+                </Grid>
+
+                <Grid x:Name="CClass"
+                      IsVisible="False">
+                    <Button Background="white"
+                        Margin="0, 15, 45, 0"
+                        HeightRequest="42"
+                        WidthRequest="125"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                        BorderColor="Transparent"/>
+
+                    <Label Text="Cancel Class"
+                                Margin="0, 15, 65, 0"
+                               TextColor="Black"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="12"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
+
+                </Grid>
+
+                <Grid Margin="10, 40, 10, 10">
+                    <Image Source="time.png"
+                                   HeightRequest="10"
+                                   HorizontalOptions="Start"
+                                   Margin="10,65,0,0"
+                                   />
+                    <Label Text="9:00 AM"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   VerticalOptions="End"
+                                   FontSize="12"
+                                   Margin="25,60,0,13.5"/>
+                </Grid>
+
+            </Grid>
+
+            <Grid>
+                <Button Background="#228E47"
+                        Margin="0, 20, 15, 5"
+                        HeightRequest="131"
+                        WidthRequest="400"
+                        BorderColor="Transparent"/>
+                <Button Background="Transparent"
+                        HeightRequest="50"
+                        WidthRequest="25"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0,20,20,60"/>
+
+                <Image Source="dots.png"
+                               HeightRequest="25.88"
+                               WidthRequest="5.97"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                                Margin="0, 20, 30, 60"/>
+
+                <Image Source="cap.png"
+                               HeightRequest="86"
+                               WidthRequest="100"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                                Margin="0, 20, 60, 0"/>
+
+                <Grid Margin="10, 40, 10, 10">
+
+                    <Label Text=" CSC 102"
+                                   SemanticProperties.HeadingLevel="Level1"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Bold"
+                                   FontSize="32"/>
+
+                    <Label Text="Python"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   FontSize="14"
+                                   Margin="10, 37, 15, 5"/>
+
+                </Grid>
+
+                <Grid Margin="10, 40, 10, 10">
+                    <Image Source="time.png"
+                                   HeightRequest="10"
+                                   HorizontalOptions="Start"
+                                   Margin="10,65,0,0"
+                                   />
+                    <Label Text="1:00 PM"
+                                   TextColor="White"
+                                   FontFamily="Montserrat_Regular"
+                                   VerticalOptions="End"
+                                   FontSize="12"
+                                   Margin="25,60,0,13.5"/>
+                </Grid>
+
+            </Grid>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

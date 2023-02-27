@@ -5,8 +5,12 @@
              Title="StuSchedulePage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Life no suppose dey hard!"
             VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            Text="Testing the push to github"
+            VerticalOptions="Center"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.addcoursedropdown">
+    
+    
+    <ScrollView BackgroundColor="White">
+        <VerticalStackLayout Margin="12, 0, 0, 0">
+            <Label  Margin="10"
+            Text="Add a course"
+            FontFamily="Montserrat_Bold"
+            FontSize="14"
+            TextColor="#735BF2"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+            <Grid>
+                <Label Text="Course"
+                    FontFamily="Montserrat_Regular"
+                    FontSize="16"
+                    TextColor="#8E8E8E"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                   Margin="28,0,0,5"
+                   />
+            </Grid>
+
+            <Frame HeightRequest="50" WidthRequest="380"  
+               BorderColor="#9F9F9F" CornerRadius="15" >
+                <Entry 
+                   HeightRequest="50"
+                   WidthRequest="380"
+                   Margin="10,0,0,0"
+                   TextColor="Black"
+                   
+                   
+            />
+
+
+            </Frame>
+
+
+            <!---===course code==========================-->
+
+            <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="10, 10, 0, 0">
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Label Text="Course Code"
+                    FontFamily="Montserrat_Regular"
+                    FontSize="16"
+                    TextColor="#8E8E8E"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                   Margin="20,0,0,5"
+                   />
+                    <Frame HeightRequest="50" WidthRequest="180"  
+                    BorderColor="#9F9F9F" CornerRadius="15"  Margin="0, -40, 0, 0">
+                        <Entry 
+                   HeightRequest="50"
+                   WidthRequest="180"
+                   Margin="0,0,0,0"
+                   TextColor="Black"/>
+                    </Frame>
+                </Grid>
+                <!---===no of student==========================-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Label Text="No. of Students"
+                    FontFamily="Montserrat_Regular"
+                    FontSize="16"
+                    TextColor="#8E8E8E"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                   Margin="20,0,0,5"
+                   />
+
+                    <Frame HeightRequest="50" WidthRequest="180"  
+                    BorderColor="#9F9F9F" CornerRadius="15" Margin="0, -40, 15, 0" BackgroundColor="Transparent">
+
+                        <Entry 
+                   HeightRequest="50"
+                   WidthRequest="180"
+                   Margin="0,0,0,0"
+                   TextColor="Black"/>
+                    </Frame>
+                    <!---arrows-->
+                    <Button BackgroundColor="Transparent" HeightRequest="15" 
+                        WidthRequest="15" VerticalOptions="Center" 
+                        HorizontalOptions="End"
+                        Margin="0, 0, 38, 16"/>
+                    <Image Source="arrowdown.png"
+                HorizontalOptions="End"
+                HeightRequest="5"
+                WidthRequest="10"
+                VerticalOptions="Center"
+                Margin="0, 0, 40, 15"/>
+                    <Button BackgroundColor="Transparent" HeightRequest="15" 
+                        WidthRequest="15" VerticalOptions="Center" 
+                        HorizontalOptions="End"
+                        Margin="0, 0, 38, 60"/>
+                    <Image Source="arrowup.png"
+                HorizontalOptions="End"
+                HeightRequest="5"
+                WidthRequest="10"
+                VerticalOptions="Center"
+                Margin="0, 0, 40, 60"/>
+                    <!---ends-->
+
+                </Grid>
+
+
+            </Grid>
+            <!---venue-->
+            <Grid>
+                <Label Text="Venue"
+                    FontFamily="Montserrat_Regular"
+                    FontSize="16"
+                    TextColor="#8E8E8E"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start"
+                   Margin="28,-50,0,0"
+                   />
+            </Grid>
+            <Grid>
+
+                <Frame HeightRequest="50" WidthRequest="380"  
+               BorderColor="#9F9F9F" CornerRadius="15" Margin="0, -25, 0, 0" BackgroundColor="Transparent" >
+
+                    <Entry 
+                   HeightRequest="50"
+                   WidthRequest="380"
+                   Margin="0,0,0,0"
+                   TextColor="Black"
+                   
+                   
+            />
+                </Frame>
+                <Button BackgroundColor="Transparent" HeightRequest="15" 
+                        WidthRequest="15" VerticalOptions="Center" 
+                        HorizontalOptions="End"
+                        Margin="0, 0, 38, 20"/>
+                <Image Source="arrowup.png"
+                HorizontalOptions="End"
+                HeightRequest="5"
+                WidthRequest="10"
+                VerticalOptions="Center"
+                Margin="0, 0, 40, 20"/>
+            </Grid>
+
+            <!---Dropdown start-->
+            <Frame HeightRequest="307" WidthRequest="380"  
+               BorderColor="#9F9F9F" CornerRadius="15" Margin="0, 5, 0, 0" BackgroundColor="Transparent" >
+                <Grid>
+                    <Grid>
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="20"
+                                Margin="0,0,0,0"
+                                VerticalOptions="Start"/>
+                        <Label Text="Technology Lecture Theater"
+                               TextColor="#707070"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="16"
+                               HorizontalTextAlignment="Center"/>
+                        <Image Source="liner.png"
+                               WidthRequest="365"
+                               HeightRequest="15"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Margin="10,15,0,10"/>
+                    </Grid>
+                    <Grid>
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="20"
+                                Margin="0,40,0,0"
+                                VerticalOptions="Start"/>
+                        <Label Text="Statistics Lecture Theatre"
+                               TextColor="#707070"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="16"
+                               Margin="10,40,0,0"
+                               HorizontalTextAlignment="Center"/>
+                        <Image Source="liner.png"
+                           WidthRequest="365"
+                           HeightRequest="15"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           Margin="10,55,0,10"/>
+
+                    </Grid>
+                    <Grid>
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="20"
+                                Margin="0,80,0,0"
+                                VerticalOptions="Start"/>
+                        <Label Text="Faculty Lecture Theatre"
+                               TextColor="#707070"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="16"
+                               Margin="10,80,0,0"
+                               HorizontalTextAlignment="Center"/>
+                        <Image Source="liner.png"
+                               WidthRequest="365"
+                               HeightRequest="15"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Margin="10,95,0,10"/>
+                    </Grid>
+                    <Grid>
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="20"
+                                Margin="0,120,0,0"
+                                VerticalOptions="Start"/>
+                        <Label Text="Mathematics Lecture Theatre"
+                               TextColor="#707070"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="16"
+                               Margin="10,120,0,0"
+                               HorizontalTextAlignment="Center"/>
+                        <Image Source="liner.png"
+                               WidthRequest="365"
+                               HeightRequest="15"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Margin="10,135,0,10"/>
+                    </Grid>
+                    <Grid>
+                        <Button BackgroundColor="Transparent"
+                                HeightRequest="20"
+                                Margin="0,160,0,0"
+                                VerticalOptions="Start"/>
+                        <Label Text="New Faculty Lecture Theatre"
+                               TextColor="#707070"
+                               FontFamily="Montserrat_Regular"
+                               FontSize="16"
+                               Margin="10,160,0,0"
+                               HorizontalTextAlignment="Center"/>
+                        <Image Source="liner.png"
+                               WidthRequest="365"
+                               HeightRequest="15"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Margin="0,175,0,0"/>
+                    </Grid>
+
+                </Grid>
+
+            </Frame>
+            <!---Dropdown end-->
+
+            <!---buttons-->
+            <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="0, 10, 15, 5">
+
+                <Grid Grid.Row="0" Grid.Column="0">
+
+                    <Button Background="#735BF2" 
+                       HeightRequest="50" 
+                       WidthRequest="166"
+                       CornerRadius="15"/>
+                    <Grid Margin="10, 0, 10, 10">
+                        <Label Text="Submit Entry"
+                        TextColor="White"
+                        FontFamily="Montserrat_Bold"
+                        FontSize="16"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                    </Grid>
+
+                </Grid>
+
+
+                <Grid Grid.Row="0" Grid.Column="1">
+
+                    <Button  Background="#EF1313"  
+                         HeightRequest="50" WidthRequest="166" 
+                          CornerRadius="15"/>
+                    <Image Source="trashbin.png"
+                               HorizontalOptions="End"
+                               HeightRequest="17.14"
+                               WidthRequest="20"
+                               VerticalOptions="Center"
+                               Margin="10, 0, 30, 10"/>
+                    <Grid Margin="10, 0, 10, 10">
+                        <Label Text="Clear Entry"
+                        TextColor="White"
+                        FontFamily="Montserrat_Bold"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                        FontSize="16"/>
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+            <!---button ends-->
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</toolkit:Popup>

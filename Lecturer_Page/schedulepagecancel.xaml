@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.schedulepagecancel">
+    
+    
+    <ScrollView BackgroundColor="White">
+        <VerticalStackLayout>
+
+
+            <Frame HeightRequest="338"
+               WidthRequest="391" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               BackgroundColor="White"
+               BorderColor="#8F9BB3"
+               
+               Margin="0,50,0,0" 
+               CornerRadius="20">
+
+                <Grid>
+                    <Grid  Margin="0,0,-320,0">
+                        <Button 
+                            BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                WidthRequest="30"
+                                Margin="0,-5,0,0"
+                                VerticalOptions="Start"/>
+                        <Image Source="close.png"
+                               HeightRequest="16.46"
+                               WidthRequest="16.46"
+                               VerticalOptions="Start"/>
+                    </Grid>
+                    <Grid>
+                        <Label Margin="20,30,0,0"
+                            Text="Why?"
+                            TextColor="#8F9BB3"
+                            FontFamily="Montserrat_Regular"
+                            FontSize="14"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Start"/>
+                    </Grid>
+                    <Grid>
+                        <Button Text="The class will hold online"
+                                FontFamily="Montserrat_Regular"
+                                FontSize="14"
+                                HeightRequest="53"
+                                WidthRequest="350"
+                                TextColor="White"
+                                CornerRadius="20"
+                                BackgroundColor="#8F9BB3"
+                                Margin="0,60,0,0"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Currently not available"
+                                FontFamily="Montserrat_Regular"
+                                FontSize="14"
+                                HeightRequest="53"
+                                WidthRequest="350"
+                                TextColor="White"
+                                BackgroundColor="#8F9BB3"
+                                CornerRadius="20"
+                                Margin="0,20,0,0" 
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                        <Button x:Name="BtnOthers"
+                                Clicked="Othersoptionclicked"
+                                Text="Others"
+                                FontFamily="Montserrat_Regular"
+                                FontSize="14"
+                                HeightRequest="53"
+                                WidthRequest="350"
+                                TextColor="White"
+                                BackgroundColor="#8F9BB3"
+                                Margin="0,0,0,40" 
+                                CornerRadius="20"
+                                VerticalOptions="End"
+                                HorizontalOptions="Center"/>
+                    </Grid>
+                    <Button BackgroundColor="Transparent"
+                            HeightRequest="50"
+                            WidthRequest="80"
+                            Text="skip"
+                            FontFamily="Montserrat_Regular"
+                            FontSize="14"
+                            TextColor="#8F9BB3"
+                            Margin="0,0,0,-10"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            />
+
+
+
+
+
+
+                </Grid>
+                
+
+
+            </Frame>
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+
+
+</ContentPage>

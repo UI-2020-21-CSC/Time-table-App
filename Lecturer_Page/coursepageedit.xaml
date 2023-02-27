@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lecturer.coursepageedit">
+
+
+    <ScrollView BackgroundColor="White">
+        <VerticalStackLayout>
+
+
+            <Frame HeightRequest="200"
+               WidthRequest="391" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               BackgroundColor="Transparent"
+               Margin="0,50,0,0">
+
+                <!---===course==========================-->
+                <Grid>
+                    <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="0, 0, 0, 0">
+                        <Grid Grid.Row="0" Grid.Column="0">
+
+                            <Label Text="Course" 
+                                  TextColor="Black"
+                                  Margin="0,15,0,0"
+                                  FontFamily="Montserrat_Regular"
+                                  FontSize="16"/>
+                        </Grid>
+                        <!---===Entry==========================-->
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Frame HeightRequest="29" WidthRequest="259"  BackgroundColor="#F3F3F3"
+                    BorderColor="#F3F3F3" CornerRadius="10" Margin="30, 0, 150, 90">
+
+                                <Entry Placeholder="Python"
+                           HeightRequest="50"
+                           WidthRequest="180"
+                           Margin="0,0,0,0"
+                           TextColor="Black"/>
+                            </Frame>
+                        </Grid>
+
+                    </Grid>
+                    <!---second-->
+                    <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="0, 40, 0, 0">
+                        <Grid Grid.Row="0" Grid.Column="0">
+
+                            <Label Text="Short" 
+                                   TextColor="Black"
+                                    Margin="0,18,0,0"
+                                   FontFamily="Montserrat_Regular"
+                                  FontSize="16"/>
+                        </Grid>
+                        <!---===Entry==========================-->
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Frame HeightRequest="29" WidthRequest="259"  BackgroundColor="#F3F3F3"
+                    BorderColor="#F3F3F3" CornerRadius="10" Margin="30, 0, 150, 90">
+
+                                <Entry Placeholder="CSC 210"
+                           HeightRequest="50"
+                           WidthRequest="180"
+                           Margin="0,0,0,0"
+                           TextColor="Black"/>
+                            </Frame>
+                        </Grid>
+
+                    </Grid>
+                    <!---ends second-->
+
+                    <!---capacity-->
+                    <Grid RowDefinitions="147,Auto,*"
+                  ColumnDefinitions="*,*"
+                  Margin="0, 80, 0, 0">
+                        <Grid Grid.Row="0" Grid.Column="0">
+
+                            <Label Text="Capacity"
+                                   TextColor="Black"
+                                   Margin="0,18,0,0"
+                                   FontFamily="Montserrat_Regular"
+                                   FontSize="16"/>
+                        </Grid>
+                        <!---===Entry==========================-->
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Frame HeightRequest="29" WidthRequest="259"  BackgroundColor="#F3F3F3"
+                    BorderColor="#F3F3F3" CornerRadius="10" Margin="30, 0, 150, 90">
+
+                                <Entry Placeholder="100"
+                           HeightRequest="50"
+                           WidthRequest="180"
+                           Margin="0,0,0,0"
+                           TextColor="Black"/>
+                            </Frame>
+                        </Grid>
+
+                    </Grid>
+                    <!---ends capacity-->
+                    <Button x:Name="Close"
+                            Clicked="CLoseme"
+                        BackgroundColor="Transparent" 
+                            HeightRequest="25"
+                            WidthRequest="30"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            Margin="0,0,55,0"/>
+                    <Image Source="close.png"
+                           HeightRequest="16.46"
+                           WidthRequest="16.46"
+                           VerticalOptions="End"
+                           HorizontalOptions="Start"
+                           Margin="270,0,0,0"/>
+                    <Button BackgroundColor="Transparent" 
+                            HeightRequest="25"
+                            WidthRequest="30"
+                            VerticalOptions="End"
+                            HorizontalOptions="End"
+                            Margin="0,0,20,0"/>
+                    <Image Source="markdone.png"
+                           HeightRequest="17"
+                           WidthRequest="21"
+                           VerticalOptions="End"
+                           HorizontalOptions="Start"
+                           Margin="300,0,0,0"/>
+
+                </Grid>
+
+
+
+
+
+
+
+
+
+            </Frame>
+
+
+
+
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</toolkit:Popup>
