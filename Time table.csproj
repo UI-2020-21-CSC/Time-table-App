@@ -67,6 +67,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Raw\EnlistedCourses.json" />
+	  <None Remove="Resources\Raw\StuScheduleCourses.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -131,6 +132,10 @@
 	  <MauiXaml Update="Student Page\StuSchedulePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModel\NewFolder\" />
 	</ItemGroup>
 
 </Project>
