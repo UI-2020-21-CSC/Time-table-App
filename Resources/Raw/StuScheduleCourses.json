@@ -1,0 +1,66 @@
+{
+    "Monday": [
+        {
+            "Id": 1,
+            "Name": "CSC213",
+            "FullName": "Digital Logic Design"
+        },
+        {
+            "Id": 2,
+            "Name": "CSC236",
+            "FullName": "Assembly Language Programming"
+        }
+    ],
+
+    "Tuesday": [
+        {
+            "Id": 3,
+            "Name": "CSC235",
+            "FullName": "Introduction to OOP"
+        },
+        {
+            "Id": 4,
+            "Name": "MAT213",
+            "FullName": "Algebra"
+        }
+    ],
+
+    "Wednesday": [
+        {
+            "Id": 5,
+            "Name": "CSC231",
+            "FullName": "Scientific Programming"
+        },
+        {
+            "Id": 6,
+            "Name": "MAT213",
+            "FullName": "Algebra II"
+        }
+    ],
+
+    "Thursday": [
+        {
+            "Id": 6,
+            "Name": "STA211",
+            "FullName": "Probability II"
+        },
+        {
+            "Id": 7,
+            "Name": "GES102",
+            "FullName": "African Cultures And Civilization"
+        }
+    ],
+
+    "Friday": [
+        {
+            "Id": 8,
+            "Name": "MAT241",
+            "FullName": "Ordinary Differential Equations"
+        },
+        {
+            "Id": 9,
+            "Name": "MAT251",
+            "FullName": "Numerical Analysis Theory, Practical"
+        }
+    ]
+}
