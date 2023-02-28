@@ -1,0 +1,23 @@
+﻿[
+  {
+    "VenueName": "ABC Theatre",
+    "ShortName": "FLT",
+    "Capacity": 900
+  },{
+    "VenueName": "DEF Theatre",
+    "ShortName": "EGG",
+    "Capacity": 900
+  },{
+    "VenueName": "GHI Theatre",
+    "ShortName": "FLT",
+    "Capacity": 900
+  },{
+    "VenueName": "Faculty Lecture Theatre",
+    "ShortName": "FLT",
+    "Capacity": 900
+  },{
+    "VenueName": "Faculty Lecture Theatre",
+    "ShortName": "FLT",
+    "Capacity": 900
+  }
+]
