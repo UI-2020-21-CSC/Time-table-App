@@ -110,7 +110,7 @@
                                     SemanticProperties.Description="This is the menu icon"/>
 
                             <Label
-                                    Text="k"
+                                    Text=""
                                     TextColor="Grey"
                                     FontSize="10"
                                     Grid.Row="2"
@@ -136,14 +136,13 @@
 
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--
+            
+            
             <ActivityIndicator
                 IsVisible="{Binding IsBusy}"
                 IsRunning="{Binding IsBusy}"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Grid.Row="0"
-                Grid.Column="0"
+                VerticalOptions="Center"
                 Grid.ColumnSpan="2"
                 Grid.RowSpan="2"
                 Color="#735BF2"
@@ -151,7 +150,7 @@
                 WidthRequest="60" 
                 ZIndex="10"
                 Background="Transparent" />
-            -->
+            
         </Grid>
     </ScrollView>
 </ContentPage>
