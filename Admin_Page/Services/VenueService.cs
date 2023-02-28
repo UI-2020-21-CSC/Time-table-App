@@ -88,6 +88,9 @@ namespace Time_table.Admin_Page.Services
             }
             catch (Exception ex)
             {
+                // this code was added because 'ex' is not used and it raises warning in the error list
+                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+
                 return false;
             }
         }
