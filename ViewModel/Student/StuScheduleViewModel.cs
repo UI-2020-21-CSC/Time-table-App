@@ -6,7 +6,7 @@ using Time_table.Model;
 
 namespace Time_table.ViewModel.Student
 {
-    class StuScheduleViewModel : BaseViewModel
+    public class StuScheduleViewModel : BaseViewModel
     {
 
         public ObservableCollection<Course> Courses { get; } = new ObservableCollection<Course>();
@@ -18,12 +18,13 @@ namespace Time_table.ViewModel.Student
 
         public StuScheduleViewModel(StuScheduleService coursesService)
         {
+
             dailyCoursesService = coursesService;
             Title = "Schedule";
-            GetDailyCoursesCommand = new Command(async () => await GetDailyCoursesAsync());
+            GetDailyCoursesCommand = new Command<string>(async parameter => await GetDailyCoursesAsync(parameter));
         }
 
-        async Task GetDailyCoursesAsync()
+        async Task GetDailyCoursesAsync(string dayOfTheWeek)
         {
             if (IsBusy)
                 return;
@@ -32,7 +33,7 @@ namespace Time_table.ViewModel.Student
             try
             {
                 IsBusy = true;
-                var courses = await dailyCoursesService.GetDailyCourses();
+                var courses = await dailyCoursesService.GetDailyCourses(dayOfTheWeek);
 
                 if (Courses.Count != 0)
                     Courses.Clear();

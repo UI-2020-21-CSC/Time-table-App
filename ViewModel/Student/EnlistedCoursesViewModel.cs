@@ -50,6 +50,8 @@ namespace Time_table.ViewModel.Student
             }
             finally
             {
+                // wait a sec
+                await Task.Delay(1000);
                 IsBusy = false;
             }
 

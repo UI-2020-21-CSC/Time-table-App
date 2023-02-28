@@ -134,8 +134,4 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="ViewModel\NewFolder\" />
-	</ItemGroup>
-
 </Project>

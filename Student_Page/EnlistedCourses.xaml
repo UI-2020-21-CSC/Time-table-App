@@ -136,7 +136,7 @@
 
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
+            <!--
             <ActivityIndicator
                 IsVisible="{Binding IsBusy}"
                 IsRunning="{Binding IsBusy}"
@@ -151,7 +151,7 @@
                 WidthRequest="60" 
                 ZIndex="10"
                 Background="Transparent" />
-
+            -->
         </Grid>
     </ScrollView>
 </ContentPage>

@@ -35,8 +35,10 @@ namespace Time_table.Services.Student
             schedule = JsonSerializer.Deserialize<Dictionary<string, List<Course>>>(contents);
 
             // learn how to work with dictionary in C#
-            if (schedule.ContainsKey(dayOfTheWeek))
-            { }
+            if (!schedule.ContainsKey(dayOfTheWeek))
+                courseList = schedule[dayOfTheWeek];
+
+
             return courseList;
         }
     }
